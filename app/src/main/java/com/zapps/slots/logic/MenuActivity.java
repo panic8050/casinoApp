@@ -20,7 +20,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        Intent startGame = new Intent(this, GameActivity.class);
+        Intent startGame = new Intent(this, IgraActivity.class);
         startActivity(startGame);
     }
 
@@ -35,7 +35,7 @@ public class MenuActivity extends AppCompatActivity {
 
                     }
                 })
-                .setTitle(getString(R.string.rules_title))
+                .setTitle(getString(R.string.rules_of_the_game))
                 .setMessage(getString(R.string.rules)).show();
 
     }

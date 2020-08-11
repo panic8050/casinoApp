@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SlotsBuilder {
+public class CasinoBuilder {
     private Activity activity;
     private List<SlotView> slotViews;
     private List<Integer> drawableIds;
@@ -23,7 +23,7 @@ public class SlotsBuilder {
     private Callback callback;
     private List<LinearLayoutManager> layoutManagers;
 
-    private SlotsBuilder() {
+    private CasinoBuilder() {
     }
 
     private void addSlots(Integer... slotsViewId) {
@@ -43,12 +43,12 @@ public class SlotsBuilder {
             RecyclerView.LayoutManager mLayoutManager = new SpeedManager(activity);
             slotView.setLayoutManager(mLayoutManager);
             layoutManagers.add((LinearLayoutManager) mLayoutManager);
-            SlotAdapter mAdapter = new SlotAdapter(drawableIds);
+            ItemAdapter mAdapter = new ItemAdapter(drawableIds);
             slotView.setAdapter(mAdapter);
             timePerInch += dockingTimePerInch;
         }
         callback.setLayoutManagers(layoutManagers);
-        slotViews.get(slotViews.size() - 1).addOnScrollListener(new ScrollListener(callback));
+        slotViews.get(slotViews.size() - 1).addOnScrollListener(new ScrollingListener(callback));
         drawableIds.clear();
     }
 
@@ -77,56 +77,56 @@ public class SlotsBuilder {
     }
 
     public static Builder builder(Activity activity) {
-        return new SlotsBuilder().new Builder(activity);
+        return new CasinoBuilder().new Builder(activity);
     }
 
     public class Builder {
         private Builder(Activity activity) {
-            SlotsBuilder.this.activity = activity;
-            SlotsBuilder.this.slotViews = new ArrayList<>();
-            SlotsBuilder.this.drawableIds = new ArrayList<>();
-            SlotsBuilder.this.layoutManagers = new ArrayList<>();
-            SlotsBuilder.this.isWork = false;
+            CasinoBuilder.this.activity = activity;
+            CasinoBuilder.this.slotViews = new ArrayList<>();
+            CasinoBuilder.this.drawableIds = new ArrayList<>();
+            CasinoBuilder.this.layoutManagers = new ArrayList<>();
+            CasinoBuilder.this.isWork = false;
         }
 
         public Builder addSlots(Integer... slotsViewId) {
-            SlotsBuilder.this.addSlots(slotsViewId);
+            CasinoBuilder.this.addSlots(slotsViewId);
             return this;
         }
 
         public Builder addDrawables(Integer... drawableIds) {
-            SlotsBuilder.this.addDrawables(drawableIds);
+            CasinoBuilder.this.addDrawables(drawableIds);
             return this;
         }
 
         public Builder setScrollTimePerInch(Float scrollTimePerInch) {
-            SlotsBuilder.this.scrollTimePerInch = scrollTimePerInch;
+            CasinoBuilder.this.scrollTimePerInch = scrollTimePerInch;
             return this;
         }
 
         public Builder setDockingTimePerInch(Float dockingTimePerInch) {
-            SlotsBuilder.this.dockingTimePerInch = dockingTimePerInch;
+            CasinoBuilder.this.dockingTimePerInch = dockingTimePerInch;
             return this;
         }
 
         public Builder setScrollTime(Integer scrollTime) {
-            SlotsBuilder.this.scrollTime = scrollTime;
+            CasinoBuilder.this.scrollTime = scrollTime;
             return this;
         }
 
         public Builder setChildIncTime(Integer childIncTime) {
-            SlotsBuilder.this.childIncTime = childIncTime;
+            CasinoBuilder.this.childIncTime = childIncTime;
             return this;
         }
 
         public Builder setOnFinishListener(Callback callback) {
-            SlotsBuilder.this.callback = callback;
+            CasinoBuilder.this.callback = callback;
             return this;
         }
 
-        public SlotsBuilder build() {
-            SlotsBuilder.this.build();
-            return SlotsBuilder.this;
+        public CasinoBuilder build() {
+            CasinoBuilder.this.build();
+            return CasinoBuilder.this;
         }
 
     }

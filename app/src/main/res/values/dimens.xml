@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="slots_view_height">200dp</dimen>
-    <dimen name="slots_iv_item_size">50dp</dimen>
-    <dimen name="menu_logo_margin">40dp</dimen>
-    <dimen name="menu_logo_size">128dp</dimen>
-    <dimen name="menu_start_btn_margin">20dp</dimen>
+    <dimen name="casino_height">200dp</dimen>
+    <dimen name="item_size">50dp</dimen>
+    <dimen name="logo_menu_margin">40dp</dimen>
+    <dimen name="menuicon_size">128dp</dimen>
+    <dimen name="menu_btn_margin">20dp</dimen>
     <dimen name="button_height">32dp</dimen>
     <dimen name="menu_rules_btn_margin">4dp</dimen>
     <dimen name="scores_board_margin_top">24dp</dimen>

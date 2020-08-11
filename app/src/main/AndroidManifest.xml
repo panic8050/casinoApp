@@ -45,7 +45,7 @@
 
 
         <activity
-            android:name="com.zapps.slots.logic.SplashScreen"
+            android:name="com.zapps.slots.logic.SplashAct"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape">
 <!--            <intent-filter>-->
@@ -61,7 +61,7 @@
             android:screenOrientation="landscape" />
 
         <activity
-            android:name="com.zapps.slots.logic.GameActivity"
+            android:name="com.zapps.slots.logic.IgraActivity"
             android:parentActivityName="com.zapps.slots.logic.MenuActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" >

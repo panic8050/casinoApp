@@ -18,10 +18,10 @@ import java.util.Map;
 
 import libs.mjn.prettydialog.PrettyDialog;
 
-public class GameActivity extends AppCompatActivity {
+public class IgraActivity extends AppCompatActivity {
 
-    private static final String CREDIT_EXTRA = "credit_extra";
-    private static final String BET_INDEX_EXTRA = "bet_index_extra";
+    private static final String CREDIT_EXTRA = "rreee";
+    private static final String BET_INDEX_EXTRA = "222wwww";
     private int mScores;
     private int mBetIndex;
     private int[] mBets;
@@ -36,8 +36,8 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         mSpinButton = findViewById(R.id.btn_spin);
-        mCreditView = findViewById(R.id.tv_scores);
-        mBetView = findViewById(R.id.tv_bet);
+        mCreditView = findViewById(R.id.score);
+        mBetView = findViewById(R.id.bet);
         mBets = getResources().getIntArray(R.array.bets_array);
 
         if (savedInstanceState == null) {
@@ -91,10 +91,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void setupSlotsMachine() {
-        final SlotsBuilder.Builder builder = SlotsBuilder.builder(this);
-        final SlotsBuilder slots = builder
+        final CasinoBuilder.Builder builder = CasinoBuilder.builder(this);
+        final CasinoBuilder slots = builder
                 .addSlots(R.id.slot_one, R.id.slot_two, R.id.slot_three, R.id.slot_four, R.id.slot_five)
-                .addDrawables(R.drawable.slot_icon_1, R.drawable.slot_icon_2, R.drawable.slot_icon_3, R.drawable.slot_icon_4)
+                .addDrawables(R.drawable.item1, R.drawable.item2, R.drawable.item3, R.drawable.item4)
                 .setScrollTimePerInch(1f)
                 .setDockingTimePerInch(0f)
                 .setScrollTime(500 + new SecureRandom().nextInt(1500))
@@ -164,16 +164,16 @@ public class GameActivity extends AppCompatActivity {
     private void showScoresDialog() {
         PrettyDialog dialog = new PrettyDialog(this)
                 .setIcon(R.drawable.pdlg_icon_info)
-                .setTitle(getString(R.string.scores_dialog_title))
-                .setMessage(getString(R.string.scores_dialog_text))
+                .setTitle(getString(R.string.game_result))
+                .setMessage(getString(R.string.point_balance))
                 .addButton(
-                        getString(R.string.play_btn_title),
+                        getString(R.string.play),
                         R.color.pdlg_color_white,
                         R.color.pdlg_color_green,
-                        () -> startActivity(GameActivity.class)
+                        () -> startActivity(IgraActivity.class)
                 )
                 .addButton(
-                        getString(R.string.menu_btn_title),
+                        getString(R.string.title_menu),
                         R.color.pdlg_color_white,
                         R.color.pdlg_color_red,
                         () -> startActivity(MenuActivity.class)
@@ -183,8 +183,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void startActivity(Class<? extends AppCompatActivity> targetActivity) {
-        Intent intent = new Intent(GameActivity.this, targetActivity);
+        Intent intent = new Intent(IgraActivity.this, targetActivity);
         startActivity(intent);
-        GameActivity.this.finish();
+        IgraActivity.this.finish();
     }
 }

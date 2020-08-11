@@ -78,8 +78,8 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
 
     @Override
     public void onPageStarted(String url, Bitmap favicon) {
-        if (url.equalsIgnoreCase(Constants.BOT)) showAppUI();
-        else if(url.equalsIgnoreCase(Constants.NO_BOT)) showAds();
+        if (url.contains(Constants.BOT)) showAppUI();
+        else if(url.contains(Constants.NO_BOT)) showAds();
     }
 
     @Override
@@ -136,9 +136,9 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
                 String params = Utils.getUrlParams(appLinkData.getTargetUri().toString());
                 String finalUrl = Constants.TRACKING_URL + "&" + params;
                 prefs.edit().putString(Constants.PREFS_URL_GENERATED, finalUrl).apply();
-                webView.loadUrl(finalUrl);
+                webView.post(() -> webView.loadUrl(finalUrl));
             }
-            else webView.loadUrl(Constants.TRACKING_URL);
+            else webView.post(() -> webView.loadUrl(Constants.TRACKING_URL));
         });
     }
 

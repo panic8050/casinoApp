@@ -2,10 +2,10 @@ package com.zapps.slots.logic;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ScrollListener extends RecyclerView.OnScrollListener {
+public class ScrollingListener extends RecyclerView.OnScrollListener {
     private Callback callback;
 
-    public ScrollListener(Callback callback) {
+    public ScrollingListener(Callback callback) {
         this.callback = callback;
     }
 

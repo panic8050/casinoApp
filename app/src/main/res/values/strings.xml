@@ -5,14 +5,14 @@
     <string name="fb_login_protocol_scheme">fb841795099680097</string>
 
     <string name="rules">1. At the beginning of the game, the player is given 500 points.\n2. The rate is selected by pressing the button \"Bet\".\n3.The amount of the reward from the bet made:\n    *2 (3 coincidences), *3 (4 coincidences), *4 (5 coincidences).\n4. The game ends either by the button \"Menu\", or when the players funds are exhausted.</string>
-    <string name="rules_title">Rules of the game</string>
-    <string name="play_btn_title">Play</string>
-    <string name="menu_btn_title">Menu</string>
-    <string name="scores_dialog_title">Game result</string>
-    <string name="scores_dialog_text">You have depleted your points balance!</string>
-    <string name="rules_btn_text">Rules</string>
-    <string name="scores">Points</string>
+    <string name="rules_of_the_game">Rules of the game</string>
+    <string name="play">Play</string>
+    <string name="title_menu">Menu</string>
+    <string name="game_result">Game result</string>
+    <string name="point_balance">You have depleted your points balance!</string>
+    <string name="rules_text">Rules</string>
+    <string name="points">Points</string>
     <string name="bet">Bet</string>
     <string name="bet_btn_title">Bet</string>
-    <string name="spin_btn_title">Spin</string>
+    <string name="spin">Spin</string>
 </resources>

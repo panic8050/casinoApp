@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SlotAdapter extends RecyclerView.Adapter<SlotAdapter.ViewHolder> {
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private List<Integer> mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -24,17 +24,17 @@ public class SlotAdapter extends RecyclerView.Adapter<SlotAdapter.ViewHolder> {
         }
     }
 
-    public SlotAdapter(List<Integer> myDataset) {
+    public ItemAdapter(List<Integer> myDataset) {
         mDataset = new ArrayList<>(myDataset);
         Collections.shuffle(mDataset);
     }
 
     @NonNull
     @Override
-    public SlotAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
+    public ItemAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
                                                      int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_list, parent, false);
+                .inflate(R.layout.item_listview, parent, false);
         return new ViewHolder(v);
     }
 
