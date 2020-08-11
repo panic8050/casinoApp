@@ -1,4 +1,4 @@
-package com.zapps.slots.logic;
+package com.mapplic.slots.logic;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.zapps.slots.R;
+import com.mapplic.slots.R;
 
 import libs.mjn.prettydialog.PrettyDialog;
 import libs.mjn.prettydialog.PrettyDialogCallback;

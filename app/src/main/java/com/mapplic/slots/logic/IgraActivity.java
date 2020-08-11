@@ -1,4 +1,4 @@
-package com.zapps.slots.logic;
+package com.mapplic.slots.logic;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.zapps.slots.R;
+import com.mapplic.slots.R;
 
 import java.security.SecureRandom;
 import java.util.HashMap;

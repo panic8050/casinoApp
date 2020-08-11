@@ -1,4 +1,4 @@
-package com.zapps.slots.logic;
+package com.mapplic.slots.logic;
 
 import android.app.Activity;
 import android.os.Handler;

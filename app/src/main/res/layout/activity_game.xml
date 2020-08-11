@@ -77,7 +77,7 @@
         app:layout_constraintRight_toRightOf="@id/linear_slots"
         app:layout_constraintTop_toTopOf="@id/linear_slots" />
 
-    <com.zapps.slots.logic.CasinoView
+    <com.mapplic.slots.logic.CasinoView
         android:id="@+id/linear_slots"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/slots_height"
@@ -89,36 +89,36 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.zapps.slots.logic.SlotView
+        <com.mapplic.slots.logic.SlotView
             android:id="@+id/slot_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scrollbars="none" />
 
-        <com.zapps.slots.logic.SlotView
+        <com.mapplic.slots.logic.SlotView
             android:id="@+id/slot_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scrollbars="none" />
 
-        <com.zapps.slots.logic.SlotView
+        <com.mapplic.slots.logic.SlotView
             android:id="@+id/slot_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scrollbars="none" />
 
-        <com.zapps.slots.logic.SlotView
+        <com.mapplic.slots.logic.SlotView
             android:id="@+id/slot_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scrollbars="none" />
 
-        <com.zapps.slots.logic.SlotView
+        <com.mapplic.slots.logic.SlotView
             android:id="@+id/slot_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scrollbars="none" />
-    </com.zapps.slots.logic.CasinoView>
+    </com.mapplic.slots.logic.CasinoView>
 
     <Button
         android:id="@+id/btn_menu"

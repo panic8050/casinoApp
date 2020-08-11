@@ -1,4 +1,4 @@
-package com.zapps.slots;
+package com.mapplic.slots.core;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import android.webkit.WebChromeClient;
 import android.widget.FrameLayout;
 
 import com.facebook.applinks.AppLinkData;
+import com.mapplic.slots.R;
 import com.onesignal.OneSignal;
 
 import im.delight.android.webview.AdvancedWebView;

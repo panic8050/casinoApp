@@ -1,9 +1,9 @@
-package com.zapps.slots.logic;
+package com.mapplic.slots.logic;
 
 import android.content.Intent;
 import android.graphics.Color;
 
-import com.zapps.slots.R;
+import com.mapplic.slots.R;
 import com.daimajia.androidanimations.library.Techniques;
 
 import wail.splacher.com.splasher.lib.SplasherActivity;

@@ -1,4 +1,4 @@
-package com.zapps.slots;
+package com.mapplic.slots;
 
 import android.content.Context;
 

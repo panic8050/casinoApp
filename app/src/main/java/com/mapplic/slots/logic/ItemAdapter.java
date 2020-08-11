@@ -1,4 +1,4 @@
-package com.zapps.slots.logic;
+package com.mapplic.slots.logic;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.zapps.slots.R;
+import com.mapplic.slots.R;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
