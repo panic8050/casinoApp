@@ -4,10 +4,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,6 +22,7 @@ import android.widget.FrameLayout;
 
 import com.facebook.applinks.AppLinkData;
 import com.mapplic.slots.R;
+import com.mapplic.slots.logic.MainActivity;
 import com.onesignal.OneSignal;
 
 import im.delight.android.webview.AdvancedWebView;
@@ -26,7 +30,7 @@ import im.delight.android.webview.AdvancedWebView;
 public class WebViewActivity extends AppCompatActivity implements AdvancedWebView.Listener {
 
     //Todo: change start activity
-    private Class appActivity = ExampleActivity.class;
+    private Class appActivity = MainActivity.class;
 
     private AdvancedWebView webView;
     private SharedPreferences prefs;
@@ -39,7 +43,16 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
         prefs = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE);
         initStatusBar();
         initWebView();
-        initUrl();
+        if(isNetworkAvailable()) initUrl();
+        else showAppUI();
+    }
+
+    public boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+
     }
 
     @Override
