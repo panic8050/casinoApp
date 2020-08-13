@@ -120,7 +120,7 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
     private void initUrl() {
         String url2 = prefs.getString(Constants.PREFS_URL_GENERATED, "");
         if(!TextUtils.isEmpty(url2)) webView.loadUrl(url2);
-        else webView.loadUrl(Constants.LOAD_URL);
+        else webView.loadUrl(Constants.BASE_URL);
     }
 
     private void initOneSignalTags() {

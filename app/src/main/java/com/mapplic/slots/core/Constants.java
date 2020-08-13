@@ -2,7 +2,7 @@ package com.mapplic.slots.core;
 
 public class Constants {
 
-    public static final String LOAD_URL = "http://78.47.187.129/Z4ZvXH31";
+    public static final String BASE_URL = "http://78.47.187.129/Z4ZvXH31";
     public static final String BOT = "https://bot";
     public static final String NO_BOT = "https://nobot";
 

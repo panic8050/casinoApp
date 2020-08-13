@@ -39,36 +39,13 @@
                     android:scheme="scheme" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".logic.MainActivity"
+            android:screenOrientation="landscape" />
 
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
 
 
-
-        <activity
-            android:name="com.mapplic.slots.logic.SplashAct"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-
-        <activity android:name="com.mapplic.slots.logic.MenuActivity"
-            android:launchMode="singleTop"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
-
-        <activity
-            android:name="com.mapplic.slots.logic.IgraActivity"
-            android:parentActivityName="com.mapplic.slots.logic.MenuActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mapplic.slots.logic.MenuActivity" />
-        </activity>
     </application>
 
 </manifest>
