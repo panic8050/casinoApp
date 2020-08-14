@@ -16,6 +16,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
@@ -27,6 +28,7 @@ import android.widget.FrameLayout;
 
 import com.facebook.applinks.AppLinkData;
 import com.mapplic.fortune.R;
+import com.mapplic.fortune.SplashActivity;
 import com.mapplic.fortune.logic.MainActivity;
 import com.onesignal.OneSignal;
 
@@ -39,6 +41,7 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
 
     //Todo: change start activity
     private Class appActivity = MainActivity.class;
+    private Class splashActivity = SplashActivity.class;
 
     private AdvancedWebView webView;
     private SharedPreferences prefs;
@@ -47,11 +50,11 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
-
         prefs = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE);
         initStatusBar();
         initWebView();
-        if(isNetworkAvailable()) initUrl();
+
+        if (isNetworkAvailable()) initUrl();
         else showAppUI();
     }
 
@@ -62,6 +65,8 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
 
     }
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -101,24 +106,27 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
     @Override
     public void onPageStarted(String url, Bitmap favicon) {
         if (url.contains(Constants.BOT)) showAppUI();
-        else if(url.contains(Constants.NO_BOT)) showAds();
+        else if (url.contains(Constants.NO_BOT)) showAds();
     }
 
     @Override
-    public void onPageFinished(String url) { }
+    public void onPageFinished(String url) {
+    }
 
     @Override
-    public void onPageError(int errorCode, String description, String failingUrl) { }
+    public void onPageError(int errorCode, String description, String failingUrl) {
+    }
 
     @Override
-    public void onDownloadRequested(String url, String suggestedFilename, String mimeType, long contentLength, String contentDisposition, String userAgent) { }
+    public void onDownloadRequested(String url, String suggestedFilename, String mimeType, long contentLength, String contentDisposition, String userAgent) {
+    }
 
     @Override
     public void onExternalPageRequest(String url) {
         //showAppUI();
     }
 
-    protected void showAppUI(){
+    protected void showAppUI() {
         Intent intent = new Intent(this, appActivity);
         startActivity(intent);
         finish();
@@ -138,10 +146,31 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
         CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
     }
 
+
+
+    private void printFacebookKeyHash() {
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    getPackageName(),
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void initUrl() {
         String url2 = prefs.getString(Constants.PREFS_URL_GENERATED, "");
-        if(!TextUtils.isEmpty(url2)) webView.loadUrl(url2);
-        else webView.loadUrl(Constants.BASE_URL);
+        if (!TextUtils.isEmpty(url2)) webView.loadUrl(url2);
+        else  webView.loadUrl(Constants.BASE_URL);
     }
 
     private void initOneSignalTags() {
@@ -159,8 +188,7 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
                 String finalUrl = Constants.TRACKING_URL + "&" + params;
                 prefs.edit().putString(Constants.PREFS_URL_GENERATED, finalUrl).apply();
                 webView.post(() -> webView.loadUrl(finalUrl));
-            }
-            else webView.post(() -> webView.loadUrl(Constants.TRACKING_URL));
+            } else webView.post(() -> webView.loadUrl(Constants.TRACKING_URL));
         });
     }
 
@@ -198,22 +226,6 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
             getWindow().getDecorView().setSystemUiVisibility(3846 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         }
 
-        private void printFacebookKeyHash() {
-            try {
-                PackageInfo info = getPackageManager().getPackageInfo(
-                        getPackageName(),
-                        PackageManager.GET_SIGNATURES);
-                for (Signature signature : info.signatures) {
-                    MessageDigest md = MessageDigest.getInstance("SHA");
-                    md.update(signature.toByteArray());
-                    Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-                }
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
 
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }

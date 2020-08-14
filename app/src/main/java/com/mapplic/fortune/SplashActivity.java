@@ -1,5 +1,6 @@
-package com.mapplic.fortune.logic;
+package com.mapplic.fortune;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,15 +8,19 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.mapplic.fortune.R;
+import com.mapplic.fortune.logic.MainActivity;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends Activity {
     private static int WELCOME_TIMEOUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+       initSplashActivity();
+    }
+
+    public  void initSplashActivity() {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         new Handler().postDelayed(() -> {
@@ -27,4 +32,5 @@ public class SplashActivity extends AppCompatActivity {
             finish();
         }, WELCOME_TIMEOUT);
     }
+
 }
