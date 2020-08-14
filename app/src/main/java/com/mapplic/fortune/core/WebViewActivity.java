@@ -16,7 +16,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
@@ -41,7 +40,6 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
 
     //Todo: change start activity
     private Class appActivity = MainActivity.class;
-    private Class splashActivity = SplashActivity.class;
 
     private AdvancedWebView webView;
     private SharedPreferences prefs;

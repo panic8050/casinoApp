@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Lucky Slots</string>
 
-    <string name="facebook_app_id">841795099680097</string>
-    <string name="fb_login_protocol_scheme">fb841795099680097</string>
+    <string name="facebook_app_id">2798303523784265</string>
+    <string name="fb_login_protocol_scheme">fb2798303523784265</string>
 
     <string name="rules">1. At the beginning of the game, the player is given 500 points.\n2. The rate is selected by pressing the button \"Bet\".\n3.The amount of the reward from the bet made:\n    *2 (3 coincidences), *3 (4 coincidences), *4 (5 coincidences).\n4. The game ends either by the button \"Menu\", or when the players funds are exhausted.</string>
     <string name="rules_of_the_game">Rules of the game</string>
