@@ -12,7 +12,7 @@ public class Constants {
     public static final String ONE_SIGNAL_TAG_NAME = "nobot";
     public static final String ONE_SIGNAL_TAG_VALUE = "1";
 
-    public static final String PREFS_NAME = "com.zapps";
+    public static final String PREFS_NAME = "com.mapplic";
     public static final String PREFS_ONE_SIGNAL_TAG_SENT = "tag_sent";
     public static final String PREFS_URL_GENERATED = "url_generated";
 }

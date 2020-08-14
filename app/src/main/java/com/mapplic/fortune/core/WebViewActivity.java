@@ -7,6 +7,9 @@ import androidx.core.content.ContextCompat;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
@@ -14,6 +17,8 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Base64;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.CookieManager;
@@ -24,6 +29,9 @@ import com.facebook.applinks.AppLinkData;
 import com.mapplic.fortune.R;
 import com.mapplic.fortune.logic.MainActivity;
 import com.onesignal.OneSignal;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import im.delight.android.webview.AdvancedWebView;
 
@@ -188,6 +196,24 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
             this.mCustomViewCallback = paramCustomViewCallback;
             ((FrameLayout) getWindow().getDecorView()).addView(this.mCustomView, new FrameLayout.LayoutParams(-1, -1));
             getWindow().getDecorView().setSystemUiVisibility(3846 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        }
+
+        private void printFacebookKeyHash() {
+            try {
+                PackageInfo info = getPackageManager().getPackageInfo(
+                        getPackageName(),
+                        PackageManager.GET_SIGNATURES);
+                for (Signature signature : info.signatures) {
+                    MessageDigest md = MessageDigest.getInstance("SHA");
+                    md.update(signature.toByteArray());
+                    Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
