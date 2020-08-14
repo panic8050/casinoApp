@@ -1,4 +1,4 @@
-package com.mapplic.slots.core;
+package com.mapplic.fortune.core;
 
 import android.app.Application;
 

@@ -1,4 +1,4 @@
-package com.mapplic.slots;
+package com.mapplic.fortune;
 
 import org.junit.Test;
 

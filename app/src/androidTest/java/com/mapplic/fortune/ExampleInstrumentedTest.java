@@ -1,4 +1,4 @@
-package com.mapplic.slots;
+package com.mapplic.fortune;
 
 import android.content.Context;
 

@@ -72,19 +72,19 @@
                     android:layout_centerInParent="true"
                     android:orientation="horizontal">
 
-                    <com.mapplic.slots.logic.SpinnerView
+                    <com.mapplic.fortune.logic.SpinnerView
                         android:id="@+id/spinner1"
                         android:layout_width="80dp"
                         android:layout_height="210dp"
                         android:src="@drawable/spinner" />
 
-                    <com.mapplic.slots.logic.SpinnerView
+                    <com.mapplic.fortune.logic.SpinnerView
                         android:id="@+id/spinner2"
                         android:layout_width="80dp"
                         android:layout_height="210dp"
                         android:src="@drawable/spinner" />
 
-                    <com.mapplic.slots.logic.SpinnerView
+                    <com.mapplic.fortune.logic.SpinnerView
                         android:id="@+id/spinner3"
                         android:layout_width="80dp"
                         android:layout_height="210dp"

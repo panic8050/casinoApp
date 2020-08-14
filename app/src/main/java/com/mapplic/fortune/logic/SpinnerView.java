@@ -1,4 +1,4 @@
-package com.mapplic.slots.logic;
+package com.mapplic.fortune.logic;
 
 
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 
-import com.mapplic.slots.R;
+import com.mapplic.fortune.R;
 
 import java.util.ArrayList;
 

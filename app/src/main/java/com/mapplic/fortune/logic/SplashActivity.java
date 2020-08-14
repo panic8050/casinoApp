@@ -1,4 +1,4 @@
-package com.mapplic.slots.logic;
+package com.mapplic.fortune.logic;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.mapplic.slots.R;
+import com.mapplic.fortune.R;
 
 public class SplashActivity extends AppCompatActivity {
     private static int WELCOME_TIMEOUT = 3000;

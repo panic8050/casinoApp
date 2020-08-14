@@ -1,4 +1,4 @@
-package com.mapplic.slots.core;
+package com.mapplic.fortune.core;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,8 +21,8 @@ import android.webkit.WebChromeClient;
 import android.widget.FrameLayout;
 
 import com.facebook.applinks.AppLinkData;
-import com.mapplic.slots.R;
-import com.mapplic.slots.logic.MainActivity;
+import com.mapplic.fortune.R;
+import com.mapplic.fortune.logic.MainActivity;
 import com.onesignal.OneSignal;
 
 import im.delight.android.webview.AdvancedWebView;

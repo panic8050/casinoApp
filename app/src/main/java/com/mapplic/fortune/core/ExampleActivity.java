@@ -1,10 +1,10 @@
-package com.mapplic.slots.core;
+package com.mapplic.fortune.core;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.mapplic.slots.R;
+import com.mapplic.fortune.R;
 
 public class ExampleActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.mapplic.slots.logic;
+package com.mapplic.fortune.logic;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.mapplic.slots.R;
+import com.mapplic.fortune.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
