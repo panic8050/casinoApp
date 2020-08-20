@@ -43,6 +43,7 @@ public class WebViewActivity extends AppCompatActivity implements AdvancedWebVie
 
     private AdvancedWebView webView;
     private SharedPreferences prefs;
+    private SplashActivity splashActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

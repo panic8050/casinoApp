@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.mapplic.fortune.logic.MainActivity;
 
@@ -17,10 +16,6 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-       initSplashActivity();
-    }
-
-    public  void initSplashActivity() {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         new Handler().postDelayed(() -> {
@@ -32,5 +27,4 @@ public class SplashActivity extends Activity {
             finish();
         }, WELCOME_TIMEOUT);
     }
-
 }
